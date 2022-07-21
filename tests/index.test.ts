@@ -12,7 +12,6 @@ chai.use(chaiHttp);
 
 jest.setTimeout(10000);
 
-
 describe('testing the length of facts and if facts stay the same', () => {
   test('check if length <=80', async () => {
     set('2019-04-13T18:09:12.451Z');
@@ -41,7 +40,7 @@ describe('testing the length of facts and if facts stay the same', () => {
       expect(firstFactText === catFact.fact).toBeTruthy();
     }
   });
-  
+
   test('check if fact does not change after 59 min', async () => {
     set('2022-04-13T18:10:12.451Z');
     const catFact: CatFact = await getLongCatFact();
@@ -51,7 +50,7 @@ describe('testing the length of facts and if facts stay the same', () => {
 
     expect(catFact.fact === catFact2.fact).toBeTruthy();
   });
-  
+
   test('test error handling', async () => {
     const catfact: CatFact = await getCatFact(true);
     expect(catfact.fact === '').toBeTruthy();
