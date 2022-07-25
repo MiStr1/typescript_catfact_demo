@@ -2,7 +2,7 @@ import * as chai from 'chai';
 import chaiHttp = require('chai-http');
 import 'mocha';
 import { set } from 'mockdate';
-import getLongCatFact, { getCatFact } from '../src/getLongCatFact';
+import LongCatFact from '../src/getLongCatFact';
 
 import CatFact from '../src/CatFact';
 
